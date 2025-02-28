@@ -14,7 +14,7 @@ from datetime import timezone
 from app import socketio
 
 app = create_app()
-
+gunicorn_app = app
 
 
 @app.route("/api")
