@@ -14,20 +14,16 @@ from datetime import timezone
 from app import socketio
 
 app = create_app()
-gunicorn_app = app
 
 
-@app.route("/api")
-def get_data():
-    return jsonify({"message": "Hello from Flask!", "status": "success"})
+# @app.route("/api")
+# def get_data():
+#     return jsonify({"message": "Hello from Flask!", "status": "success"})
 
-
-
-# Register Blueprints
-app.register_blueprint(ml_bp, url_prefix="/ml")
-app.register_blueprint(comment_bp, url_prefix="/comments")
-app.register_blueprint(video_bp, url_prefix='/video')
-app.register_blueprint(user_bp, url_prefix='/auth')
+# app.register_blueprint(ml_bp, url_prefix="/ml")
+# app.register_blueprint(comment_bp, url_prefix="/comments")
+# app.register_blueprint(video_bp, url_prefix='/video')
+# app.register_blueprint(user_bp, url_prefix='/auth')
 
 if __name__ == "__main__":
     socketio.run(app, debug=True) 

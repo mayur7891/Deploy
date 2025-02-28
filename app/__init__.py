@@ -26,6 +26,20 @@ def create_app():
     CORS(app)
     jwt.init_app(app)
     socketio.init_app(app)
- 
+    
+    from app.routes.ml_routes import ml_bp
+    from app.routes.comment_routes import comment_bp
+    from app.routes.video_routes import video_bp
+    from app.routes.auth_routes import user_bp
+
+    # Register blueprints
+    app.register_blueprint(ml_bp, url_prefix="/ml")
+    app.register_blueprint(comment_bp, url_prefix="/comments")
+    app.register_blueprint(video_bp, url_prefix='/video')
+    app.register_blueprint(user_bp, url_prefix='/auth')
+
+    @app.route("/api")
+    def get_data():
+        return {"message": "Hello from Flask!", "status": "success"}
 
     return app
