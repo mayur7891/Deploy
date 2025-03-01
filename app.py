@@ -10,6 +10,7 @@ from app.model import SentimentModel, CommentModel
 import datetime
 from datetime import timezone
 
+import os
 
 from app import socketio
 
@@ -26,4 +27,5 @@ app = create_app()
 # app.register_blueprint(user_bp, url_prefix='/auth')
 
 if __name__ == "__main__":
-    socketio.run(app, debug=True) 
+    port = int(os.getenv("PORT", 5000))  # Use Render-assigned port
+    socketio.run(app, host="0.0.0.0", port=port, debug=False) 
