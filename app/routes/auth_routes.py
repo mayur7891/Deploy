@@ -1,7 +1,6 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import create_access_token
 from app.model import UserModel
-from app import mongo, bcrypt
 
 user_bp = Blueprint("user_routes", __name__)
 

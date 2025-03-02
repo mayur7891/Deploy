@@ -1,7 +1,7 @@
 env/
 app/__pycache__
-app/pickles/sentiment_pipeline.pkl
 app/routes/__pycache__
 app/services/__pycache__
 *.dll
 *.lib
+*.pkl

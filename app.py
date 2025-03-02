@@ -1,14 +1,9 @@
 from app import create_app 
-from flask import jsonify, request
-from app.routes.ml_routes import ml_bp
-from app.routes.comment_routes import comment_bp
-from app.routes.video_routes import video_bp
-from app.routes.auth_routes import user_bp
+# from app.routes.ml_routes import ml_bp
+# from app.routes.comment_routes import comment_bp
+# from app.routes.video_routes import video_bp
+# from app.routes.auth_routes import user_bp
 
-from app.services.preprocessing import preprocess_text, analyze_sentiment
-from app.model import SentimentModel, CommentModel
-import datetime
-from datetime import timezone
 
 import os
 

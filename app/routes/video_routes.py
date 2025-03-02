@@ -1,5 +1,4 @@
 from flask import Blueprint, request, jsonify
-from pymongo.errors import DuplicateKeyError
 from app.model import VideoModel
 
 
