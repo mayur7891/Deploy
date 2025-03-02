@@ -7,7 +7,7 @@ import gdown
 # Define model URLs
 MODEL_URLS = {
     "sbert_pipeline.pkl": "https://drive.google.com/uc?id=1tqdzXKAOfdR85zj6muE4eOhdPe57uC3l",
-    "sentiment_analyzer.pkl": "https://drive.google.com/uc?id=1nJw6fiPjXW9cC79STVoI_GfuyRkMKLjo",
+    # "sentiment_analyzer.pkl": "https://drive.google.com/uc?id=1nJw6fiPjXW9cC79STVoI_GfuyRkMKLjo",
 }
 
 # Create directory for models
@@ -26,14 +26,15 @@ for model_name, url in MODEL_URLS.items():
 with open(os.path.join(MODEL_DIR, "sbert_pipeline.pkl"), "rb") as f:
     sbert_model = pickle.load(f)
 
-with open(os.path.join(MODEL_DIR, "sentiment_analyzer.pkl"), "rb") as f:
-    sentiment_analyzer = pickle.load(f)
+# with open(os.path.join(MODEL_DIR, "sentiment_analyzer.pkl"), "rb") as f:
+#     sentiment_analyzer = pickle.load(f)
 
 def analyze_sentiment(comment):
     """Returns sentiment of the given comment."""
     if pd.isna(comment) or not isinstance(comment, str) or comment.strip() == "":
         return "neutral"
-    return sentiment_analyzer(comment)[0]['label'].lower()
+    # return sentiment_analyzer(comment)[0]['label'].lower()
+    return "neutral"
 
 def preprocess_text(text):
     """Cleans and converts text to an embedding."""
